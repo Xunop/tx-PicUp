@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"path/filepath"
 	"sync"
 
@@ -25,7 +24,7 @@ func Config() *tomlConfig {
 		if err != nil {
 			panic(err)
 		}
-		fmt.Printf("config file path: %s\n", filePath)
+		println("config file path: ", filePath)
 		if _, err := toml.DecodeFile(filePath, &cfg); err != nil {
 			panic(err)
 		}
